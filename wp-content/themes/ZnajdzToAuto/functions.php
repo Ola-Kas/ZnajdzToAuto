@@ -30,6 +30,7 @@
         register_nav_menus(
             array(
                 "main-menu" => "Main menu",
+                "header-menu" => "Header menu",
                 "footer-menu" => "Footer menu"
             )
         );
@@ -59,3 +60,33 @@
         register_post_type( 'ads', $ads_args );
     }
     add_action( 'init', 'add_custom_post_types', 0);       
+
+
+    // od tej lini dodane z functions Dominika
+        //Add Post
+        function add_post($title, $desc, $name, $insert_email, $phone, $category){
+            $id = wp_insert_post(array(
+                 "post_type" => "advertisement",
+                 "post_title" => $title,
+                 'post_content'=> $desc,
+                 "post_status" => "Draft"
+             ));
+             update_field('nazwa_sprzedajacego', $name, $id );
+             update_field('podaj_email', $insert_email, $id );
+             update_field('podaj_telefon', $phone, $id );
+             update_field('kategoria_ogloszenia', $category, $id );
+     
+             return $id;
+             }
+     
+          // Add Custom Taxonomy
+          function add_custom_taxonomy() {  
+             $addition_cats_args = array(
+                 'hierarchical' => true,
+                 'label' => 'Kategorie ogłoszeń',
+                 'labels' => array('name' => 'Kategorie ogłoszeń', 'menu_name' => 'Kategorie ogłoszeń')
+             );
+     
+             register_taxonomy('addition_cats', array('advertisement'), $addition_cats_args);
+         }    
+         add_action( 'init', 'add_custom_taxonomy', 0 );

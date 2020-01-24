@@ -19,7 +19,13 @@
 
 <!-- search  -->
 <div class="search-form-container text-center">
-    <?php echo do_shortcode('[ivory-search id="22" title="Default Search Form"]'); ?>
+    
+    <div>Wyszukaj ogłoszenia:</div> 
+    
+    <form action="<?php echo get_home_url(); ?>">
+        <input type="text" name="s" id="s" placeholder="szukaj...">
+    </form>
+
 </div>
  
 
@@ -30,7 +36,7 @@
         <div id="slider" class="text-center ">
             <?php foreach ($slider as $slide) : ?>
                 <div>
-                    <div><img src="<?php echo $slide; ?>" alt=""></div>
+                    <div><?php echo $slide; ?></div>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -38,9 +44,11 @@
 
 
 <!-- add button  -->
-    <button type="button" class="btn btn-info btn-lg btn-block">
-    <a href="<?php the_field('add_button'); ?>">Dodaj ogłoszenie</a></button> 
-    
+<div class="button-container d-flex justify-content-center">
+    <button type="button" class="btn btn-primary btn-lg btn-block" style="width: 600px;">
+        <a href="<?php the_field('add_button'); ?>">Dodaj nowe ogłoszenie</a>
+    </button> 
+</div>   
 
 
 <!-- cards  -->
@@ -51,7 +59,7 @@
                     <div class="col-lg-4 mb-3 mb-lg-0">
                         <div class="card">
                             <div class="card-header">
-                                <h2 class="text-center text-info font-weight-normal mb-0"><?php echo $card_1['title']; ?></h2>
+                                <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_1['title']; ?></h2>
                             </div>
                             <div class="card-body">                                
                                 <p><?php echo $card_1['content']; ?></p>
@@ -65,7 +73,7 @@
                     <div class="col-lg-4 mb-3 mb-lg-0">
                         <div class="card">
                             <div class="card-header">
-                                <h2 class="text-center text-info font-weight-normal mb-0"><?php echo $card_2['title']; ?></h2>
+                                <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_2['title']; ?></h2>
                             </div>
                             <div class="card-body">                                
                                 <p><?php echo $card_2['content']; ?></p>
@@ -79,7 +87,7 @@
                     <div class="col-lg-4 mb-3 mb-lg-0">
                         <div class="card">
                             <div class="card-header">
-                                <h2 class="text-center text-info font-weight-normal mb-0"><?php echo $card_3['title']; ?></h2>
+                                <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_3['title']; ?></h2>
                             </div>
                             <div class="card-body">                                
                                 <p><?php echo $card_3['content']; ?></p>

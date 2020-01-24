@@ -6,27 +6,26 @@
 
 //Partials
 @import "footer";
+@import "header";
 
 // Custom styles
+a {
+    color: inherit;
 
-body {
-    background-color: yellow;
-}
-
-header {
-    background-color: grey;
-} 
-
-header ul {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0;
-
-    li {
-        display: inline-block;
-
-        &:not(:first-child) {
-            margin-left: 1rem;
-        }
+    &:hover {
+        text-decoration: none;
+        color: $warning;
     }
 }
+
+body {
+    background-color: $light;
+}
+
+.myaccount-wrapper {
+    height: 200px;  
+}
+
+// .button-container {
+//     width: 600px;
+// }

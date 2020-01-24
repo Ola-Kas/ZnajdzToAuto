@@ -1,6 +1,6 @@
 <footer>
 
-<div class="d-flex justify-content-around">
+<div class="d-flex justify-content-around pt-3">
 
 <!-- sociale  -->
     <div id="socialSites" class="d-flex flex-column align-items-center">
@@ -26,7 +26,11 @@
 </div>       
 
 
-<div class="text-center text-muted py-4">&copy; <?php bloginfo('name'); ?> <?php echo date("Y"); ?></div>
+
+
+<div class="text-center text-dark py-4">&copy;
+<a href="<?php echo get_home_url(); ?>"><?php bloginfo('name'); ?> <?php echo date("Y"); ?></a> 
+</div>
         
 </footer>
     

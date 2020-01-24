@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row justify-content-between py-4">
                 <div class="col-md-3 text-center text-md-left mb-4 mb-md-0">
-                    <a href="<?php echo get_home_url(); ?>" class="h1 text-info font-weight-light"><?php bloginfo('name'); ?></a>
+                    <a href="<?php echo get_home_url(); ?>" class="h1 font-weight-light"><?php bloginfo('name'); ?></a>
                 </div>
                 <div class="col-md-9 d-flex justify-content-center justify-content-md-end align-items-center">
                     <?php 
@@ -23,6 +23,13 @@
                             'theme_location' => 'main-menu',
                             'container' => 'ul',
                             'menu_class' => 'list-inline mb-0'
+                        ]); 
+                    ?>
+                    <?php 
+                        wp_nav_menu([
+                            'theme_location' => 'header-menu',
+                            'container' => 'ul',
+                            'menu_class' => 'list-inline mb-0 btn btn-warning ml-3'
                         ]); 
                     ?>
                 </div>
@@ -34,7 +41,7 @@
 <!-- breadcrumbs  -->
 
     <?php if (!is_front_page()) : ?>
-        <div id="page-header" class="text-white bg-info font-weight-light d-flex align-items-center">
+        <div id="page-header" class="text-white bg-dark font-weight-light d-flex align-items-center">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
