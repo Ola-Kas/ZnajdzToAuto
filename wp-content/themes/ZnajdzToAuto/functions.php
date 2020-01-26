@@ -44,22 +44,22 @@
     add_theme_support( 'post-thumbnails' );
 
     
-         // Add Custom Post Type
-    function add_custom_post_types() {         
-        $ads_args = array(
-            'label'               => 'Ads',
-            'labels'              => array('name' => 'Ads', 'menu_name' => 'Ads'),
-            'supports'            => array( 'title', 'thumbnail', 'editor' ),
-            'public'              => true,
-            'exclude_from_search' => false,
-            'menu_position'       => 20,
-            'menu_icon'           => 'dashicons-admin-post',
-            'taxonomies'          => array('ads_cats')
-        );
+         // Add Custom Post Type - moj taki byl zanim dodalam Dominika
+    // function add_custom_post_types() {         
+    //     $ads_args = array(
+    //         'label'               => 'Ads',
+    //         'labels'              => array('name' => 'Ads', 'menu_name' => 'Ads'),
+    //         'supports'            => array( 'title', 'thumbnail', 'editor' ),
+    //         'public'              => true,
+    //         'exclude_from_search' => false,
+    //         'menu_position'       => 20,
+    //         'menu_icon'           => 'dashicons-admin-post',
+    //         'taxonomies'          => array('ads_cats')
+    //     );
 
-        register_post_type( 'ads', $ads_args );
-    }
-    add_action( 'init', 'add_custom_post_types', 0);       
+    //     register_post_type( 'ads', $ads_args );
+    // }
+    // add_action( 'init', 'add_custom_post_types', 0);       
 
 
     // od tej lini dodane z functions Dominika
@@ -90,3 +90,24 @@
              register_taxonomy('addition_cats', array('advertisement'), $addition_cats_args);
          }    
          add_action( 'init', 'add_custom_taxonomy', 0 );
+
+                 // Add Custom Post Type
+
+        function add_custom_post_types() {         
+            $addition_args = array(
+                'label'                => 'Ogłoszenia',
+                'labels'              => array('name' => 'advertisement', 'menu_name' => 'Ogłoszenia'),
+                'supports'            => array( 'title','editor','custom-fields'),
+                'public'              => true,
+                'exclude_from_search' => false,
+                'menu_position'       => 20,
+                'menu_icon'           => 'dashicons-admin-post',
+                'taxonomies'          => array('addition_cats')
+            );
+    
+            register_post_type( 'advertisement', $addition_args );
+        }
+        add_action( 'init', 'add_custom_post_types', 0);
+
+        // Update fields
+        update_field($count, $nazwa, $id);

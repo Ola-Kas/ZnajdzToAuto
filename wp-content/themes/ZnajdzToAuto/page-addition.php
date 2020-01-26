@@ -1,6 +1,8 @@
-<?php get_header(); 
+<?php  
+
 /* Template Name: Addition */
 
+get_header();
     // input variables
     $tytul = $_POST['tytul'];
     $zdjecie = $_POST['zdjecie'];
@@ -8,40 +10,13 @@
     $email = $_POST['email'];
     $telefon = $_POST['telefon'];
     $nazwa = $_POST['nazwa'];
-    $cars = $_POST['cars'];
+    $samochody = $_POST['cars'];
 
     $count = get_field('nazwa');
 
-    // Save a basic text value.
-    // $field_key = 'nazwa_sprzedajacego';
-    // update_field( $field_key, $count, $id );
-
     if($tytul){
-        add_post($tytul, $opis, $nazwa, $email, $telefon, $cars);
+        add_post($tytul, $opis, $nazwa, $email, $telefon, $samochody);
     };
-
-    // if($nazwa){
-    // update_field('nazwa_sprzedajacego', $count, $id );
-    // };
-    // if($id){
-    //     add_post_meta($id, '_your_custom_1', $_POST['opis']);
-    //    }
-//    if($id){
-//     add_post($_POST['tytul']);
-//     add_post_meta($_POST['opis'], 'Opis');
-//     // add_post_meta($post_id, '_your_custom_2');
-//     // add_post_meta($post_id, '_your_custom_3');
-//    }
-   
-  
-
-// if ($post_id) {
-//     // insert post meta
-//     add_post_meta($post_id, '_your_custom_1', $custom1);
-//     add_post_meta($post_id, '_your_custom_2', $custom2);
-//     add_post_meta($post_id, '_your_custom_3', $custom3);
-//  }
-
 
 ?>
 

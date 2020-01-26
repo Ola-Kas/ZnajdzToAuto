@@ -18,25 +18,28 @@
 <main>
 
 <!-- search  -->
-<div class="search-form-container text-center">
+<div class="d-flex justify-content-center pt-5">
+<div class="search-form-container text-center border border-dark rounded bg-warning text-dark" style="width:600px; height:100px">
     
-    <div>Wyszukaj ogłoszenia:</div> 
+    <div class="mt-2">Szukaj w ogłoszeniach:</div> 
     
     <form action="<?php echo get_home_url(); ?>">
-        <input type="text" name="s" id="s" placeholder="szukaj...">
+        <input type="text" name="s" id="s" placeholder="szukaj..." class="mt-2">
     </form>
 
 </div>
- 
+</div>
 
 
 <!-- slider  -->
 
-    <?php if (count($slider) > 0) : ?>
-        <div id="slider" class="text-center ">
+
+<?php if (count($slider) > 0) : ?>
+        <div id="slider" class="text-center">
             <?php foreach ($slider as $slide) : ?>
                 <div>
-                    <div><?php echo $slide; ?></div>
+                    <div class="w-100 h-100 p-3">
+                    <img src="<?php echo $slide; ?>" alt=""></div>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -61,7 +64,7 @@
                             <div class="card-header">
                                 <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_1['title']; ?></h2>
                             </div>
-                            <div class="card-body">                                
+                            <div class="card-body text-center">                                
                                 <p><?php echo $card_1['content']; ?></p>
                                 <a href="<?php echo $card_1['url']; ?>" class="btn btn-block btn-warning">Czytaj więcej</a>
                             </div>
@@ -75,7 +78,7 @@
                             <div class="card-header">
                                 <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_2['title']; ?></h2>
                             </div>
-                            <div class="card-body">                                
+                            <div class="card-body text-center">                                
                                 <p><?php echo $card_2['content']; ?></p>
                                 <a href="<?php echo $card_2['url']; ?>" class="btn btn-block btn-warning">Czytaj więcej</a>
                             </div>
@@ -89,7 +92,7 @@
                             <div class="card-header">
                                 <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_3['title']; ?></h2>
                             </div>
-                            <div class="card-body">                                
+                            <div class="card-body text-center">                                
                                 <p><?php echo $card_3['content']; ?></p>
                                 <a href="<?php echo $card_3['url']; ?>" class="btn btn-block btn-warning">Czytaj więcej</a>
                             </div>

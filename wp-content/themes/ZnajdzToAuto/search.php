@@ -4,7 +4,9 @@
 ?>
 
     <main>
-
+    <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts("s=$s&paged=$paged&cat=1,2,3"); ?>
+    
+    
     <!-- search result  -->
         <h3 class="text-center">Wyniki wyszukiwania dla:</h3>
         <div class="text-center"><?php echo get_search_query(); ?></div>
