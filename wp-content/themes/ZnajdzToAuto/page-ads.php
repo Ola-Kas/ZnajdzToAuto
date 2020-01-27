@@ -2,10 +2,11 @@
     /* Template Name: Ads */
 
     $ads_items = new WP_Query(array(
-        "post_type" => "ads",
-        "posts_per_page" => -1,
+        "post_type" => "advertisement",
+        // "posts_per_page" => -1, to wyswietla wszystkie, a nam zalezy zeby bylo mniej i ewentualnie paginacja
+        //standardowo WP ma wyswietlania 10, wiec mozna nad tym popracowac
     ));
-
+    
     get_header(); 
 ?>
     <main>
@@ -25,6 +26,15 @@
                 <?php endif; ?>
             </div>
         </div>
+
+       <!-- main page button -->
+       <div class="button-container d-flex justify-content-center mb-3">
+            <a href="<?php echo get_home_url(); ?>">
+                <button type="button" class="btn btn-warning btn-lg btn-block" style="width: 600px;">
+                    Powrót na stronę główną</button>
+            </a>    
+        </div>
+
     </main>
 
 <?php get_footer(); ?>

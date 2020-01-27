@@ -19,9 +19,21 @@
                 </div>
             </div>
         </div>
+
+
+       <!-- main page button -->
+       <div class="button-container d-flex justify-content-center mb-3">
+            <a href="<?php echo get_home_url(); ?>">
+                <button type="button" class="btn btn-warning btn-lg btn-block" style="width: 600px;">
+                    Powrót na stronę główną</button>
+            </a>    
+        </div>
+
+
+
     </main>
 
-<?php get_footer(); ?>
+
 
 <?php 
     get_footer();

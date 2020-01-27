@@ -4,7 +4,7 @@
 ?>
 
     <main>
-    <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts("s=$s&paged=$paged&cat=1,2,3"); ?>
+   
     
     
     <!-- search result  -->
@@ -38,6 +38,18 @@
                 <p class="text-muted text-center my-5">Brak wyników</p>
             <?php endif; ?>
         </div>
+
+        <!-- main page button -->
+        <div class="button-container d-flex justify-content-center mb-3">
+            <a href="<?php echo get_home_url(); ?>">
+                <button type="button" class="btn btn-warning btn-lg btn-block" style="width: 600px;">
+                    Powrót na stronę główną</button>
+            </a>    
+        </div>
+
+
+
     </main>
+
 
 <?php get_footer(); ?>

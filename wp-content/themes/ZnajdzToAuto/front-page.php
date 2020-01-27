@@ -16,24 +16,27 @@
 ?>
 
 <main>
-
 <!-- search  -->
-<div class="d-flex justify-content-center pt-5">
-<div class="search-form-container text-center border border-dark rounded bg-warning text-dark" style="width:600px; height:100px">
-    
-    <div class="mt-2">Szukaj w ogłoszeniach:</div> 
-    
-    <form action="<?php echo get_home_url(); ?>">
-        <input type="text" name="s" id="s" placeholder="szukaj..." class="mt-2">
-    </form>
+<div class="search-form-container d-flex justify-content-center pt-5">
+    <div class="text-center border border-dark rounded bg-warning text-dark" style="width:600px; height:200px">
+            <form action="<?php echo get_home_url(); ?>">
+                <div class="mt-2">Szukaj w ogłoszeniach:</div>
+                <input type="text" name="s" id="s" placeholder="wpisz nazwę..." class="mt-2">
+                <button class="btn btn-primary" type="submit">Szukaj</button>
+                <br>
+                <span>lub</span>
+                <br>
+                <button class="btn btn-primary" type="submit">Przeglądaj ogłoszenia</button>
 
+            </form>          
+    </div>
 </div>
-</div>
 
 
+ 
 <!-- slider  -->
 
-
+<div class="slider-wrapper position-relative">
 <?php if (count($slider) > 0) : ?>
         <div id="slider" class="text-center">
             <?php foreach ($slider as $slide) : ?>
@@ -44,13 +47,18 @@
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
+</div>
+
 
 
 <!-- add button  -->
 <div class="button-container d-flex justify-content-center">
-    <button type="button" class="btn btn-primary btn-lg btn-block" style="width: 600px;">
-        <a href="<?php the_field('add_button'); ?>">Dodaj nowe ogłoszenie</a>
-    </button> 
+    
+        <a href="<?php the_field('add_button'); ?>">
+            <button type="button" class="btn btn-primary btn-lg btn-block" style="width: 600px;">
+                Dodaj nowe ogłoszenie</button>
+        </a>
+     
 </div>   
 
 
@@ -103,5 +111,41 @@
             </div>
         </div>
     </div>
+
+
+<!-- last ads  -->
+
+
+
+<div class="last-ads-wrapper border border-danger mb-3">
+    <h3 class="text-center">Ostatnio dodane:</h3>
+
+    <?php
+        $ads_items = new WP_Query(array(
+            "post_type" => "advertisement",
+            "posts_per_page" => 3,
+        ));     
+    ?>
+
+    <div class="container mt-5 ">
+            <div class="row">
+                <?php if ($ads_items->have_posts()) : while ($ads_items->have_posts()) : $ads_items->the_post() ?>
+                    <div class="col-lg-4 col-md-6 mb-5">
+                        <figure class="figure">
+                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="figure-img img-thumbnail img-fluid rounded" alt="<?php the_title(); ?>">
+                            <figcaption class="figure-caption"><?php the_title(); ?></figcaption>
+                        </figure>
+                    </div>
+                <?php endwhile; ?>
+                    <div class="pt-5 text-center"><p><?php posts_nav_link(); ?></p></div>
+                <?php else : ?>    
+                    <p class="text-muted text-center my-5">Brak wyników</p>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
+
 </main>
+
 <?php get_footer(); ?>

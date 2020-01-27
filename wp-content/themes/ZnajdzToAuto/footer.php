@@ -9,6 +9,13 @@
         <a href="https://www.instagram.com/?hl=pl">Instagram</a>
     </div>
 
+<!-- ads list  -->
+<a href="<?php the_field('button'); ?>">
+            <button type="button" class="btn btn-primary btn-lg btn-block" style="width: 60px;">
+                Zobacz ogłoszenia</button>
+        </a>
+
+
 <!-- our pages  -->
     <div id="ourSites" class="d-flex flex-column">
         <h4>ZnajdźToAuto:</h4>
