@@ -28,7 +28,9 @@ body {
 
 .search-form-container {
     position: absolute;
-    left: 100px;
+    left: 0;
+    width: 100%;
+    text-align: center;
     z-index: 1;
 }
 // .slider-wrapper {

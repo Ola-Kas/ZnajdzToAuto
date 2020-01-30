@@ -22,7 +22,7 @@
                         wp_nav_menu([
                             'theme_location' => 'main-menu',
                             'container' => 'ul',
-                            'menu_class' => 'list-inline mb-0'
+                            'menu_class' => 'list-inline mb-0 btn btn-primary'
                         ]); 
                     ?>
                     <?php 

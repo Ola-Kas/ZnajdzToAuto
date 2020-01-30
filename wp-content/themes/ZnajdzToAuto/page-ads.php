@@ -13,12 +13,14 @@
         <div class="container mt-5 ">
             <div class="row">
                 <?php if ($ads_items->have_posts()) : while ($ads_items->have_posts()) : $ads_items->the_post() ?>
-                    <div class="col-lg-4 col-md-6 mb-5">
-                        <figure class="figure">
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="figure-img img-thumbnail img-fluid rounded" alt="<?php the_title(); ?>">
+                <a href="<?php the_permalink(); ?>"><div class="col-lg-4 mb-3 mb-lg-0 mb-5">
+                        <figure class="figure" style="height: 300px; width: 500px;">
+                        <img src="<?php echo get_field('dodaj_zdjecie');?>" 
+                            class="figure-img img-thumbnail img-fluid rounded" alt="<?php the_title(); ?>">
                             <figcaption class="figure-caption"><?php the_title(); ?></figcaption>
+                              
                         </figure>
-                    </div>
+                    </div></a>
                 <?php endwhile; ?>
                     <div class="pt-5 text-center"><p><?php posts_nav_link(); ?></p></div>
                 <?php else : ?>    
@@ -26,6 +28,8 @@
                 <?php endif; ?>
             </div>
         </div>
+
+
 
        <!-- main page button -->
        <div class="button-container d-flex justify-content-center mb-3">

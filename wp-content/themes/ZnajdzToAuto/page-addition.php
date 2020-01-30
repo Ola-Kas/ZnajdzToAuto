@@ -10,12 +10,12 @@ get_header();
     $email = $_POST['email'];
     $telefon = $_POST['telefon'];
     $nazwa = $_POST['nazwa'];
-    $samochody = $_POST['cars'];
-
-    $count = get_field('nazwa');
+    $kategoria = $_POST['kategoria'];
+    $my_file = $_FILES['fileToUpload'];
 
     if($tytul){
-        add_post($tytul, $opis, $nazwa, $email, $telefon, $samochody);
+        $image = save_file($my_file);
+        add_post($tytul, $opis, $nazwa, $email, $telefon, $kategoria, $image);
     };
 
 ?>
@@ -23,7 +23,7 @@ get_header();
     <main>
         <div class="container">
      
-                <form action="<?php echo get_permalink(get_the_ID()); ?>" method="post" class="form-horizontal">
+                <form action="<?php echo get_permalink(get_the_ID()); ?>" method="post" class="form-horizontal" enctype="multipart/form-data">
                     <div class="form-group mt-5">
                     <label class="col-sm-2 control-label">Wpisz tytuł*</label>
                     <div class="col-sm-10">
@@ -33,7 +33,7 @@ get_header();
                     <div class="form-group">
                     <label class="col-sm-2 control-label">Dodaj zdjęcie*</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="zdjecie" type="image" name="zdjecie" required>
+                        <input class="form-control" id="fileToUpload" type="file" name="fileToUpload" required>
                     </div>
                     </div>
                     <div class="form-group">
@@ -63,11 +63,20 @@ get_header();
                     <div class="form-group">
                     <label class="col-sm-2 control-label">Kategoria*</label>
                     <div class="col-sm-10">
-                        <select name="cars" id="cars">
-                            <option value="osobowe">Osobowe</option>
-                            <option value="terenowe">Terenowe</option>
-                            <option value="motocykle">Motocykle</option>
-                        </select>
+                        <!-- pobranie kategorii z ogłoszeń -->
+                        <?php
+                            $taxonomies = get_terms( array(
+                                'taxonomy' => 'addition_cats',
+                                'hide_empty' => false
+                            ) );
+                        ?>
+                        
+                        <select name="kategoria">
+                        <?php foreach($taxonomies as $taxonomie) : ?>
+                            <option value="<?php echo $taxonomie->term_id; ?>"><?php echo $taxonomie->name; ?></option>
+                        <?php endforeach; ?>
+                        </select>                       
+
                     </div>
                     </div>
                     <div class="form-group">
@@ -79,6 +88,8 @@ get_header();
 
                     <button type="submit" class="btn btn-primary">Potwierdź</button>
                 </form>
+                <?php if (count($_POST)>0) echo '<script>alert("Ogłoszenie wypełnione pomyślnie, prosimy czekać na publikację!")</script>'; ?>
+
         </div>
             
     </main>

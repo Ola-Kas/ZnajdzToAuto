@@ -17,16 +17,21 @@
 
 <main>
 <!-- search  -->
+
 <div class="search-form-container d-flex justify-content-center pt-5">
-    <div class="text-center border border-dark rounded bg-warning text-dark" style="width:600px; height:200px">
+    <div class="text-center rounded bg-warning text-dark" style="width:600px; height:200px">
             <form action="<?php echo get_home_url(); ?>">
                 <div class="mt-2">Szukaj w ogłoszeniach:</div>
-                <input type="text" name="s" id="s" placeholder="wpisz nazwę..." class="mt-2">
+                    <input type="text" name="s" id="s" placeholder="wpisz nazwę..." class="mt-2">
                 <button class="btn btn-primary" type="submit">Szukaj</button>
                 <br>
                 <span>lub</span>
                 <br>
-                <button class="btn btn-primary" type="submit">Przeglądaj ogłoszenia</button>
+                <a href="<?php the_field('ads_button'); ?>" class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" style="width: 200px;">
+                    Przeglądaj ogłoszenia</button>
+                </a>
+                
 
             </form>          
     </div>
@@ -40,10 +45,11 @@
 <?php if (count($slider) > 0) : ?>
         <div id="slider" class="text-center">
             <?php foreach ($slider as $slide) : ?>
-                <div>
-                    <div class="w-100 h-100 p-3">
-                    <img src="<?php echo $slide; ?>" alt=""></div>
-                </div>
+                <div style="background-image: url('<?php echo $slide; ?>'); height: 600px; background-repeat: no-repeat;
+                    background-position: center; background-size: cover;">    
+                    <img src="" alt="" title="tak ma być">   
+                </div> 
+                  
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
@@ -51,8 +57,9 @@
 
 
 
+
 <!-- add button  -->
-<div class="button-container d-flex justify-content-center">
+<div class="button-container d-flex justify-content-center mb-5">
     
         <a href="<?php the_field('add_button'); ?>">
             <button type="button" class="btn btn-primary btn-lg btn-block" style="width: 600px;">
@@ -62,7 +69,41 @@
 </div>   
 
 
-<!-- cards  -->
+
+<!-- last ads  -->
+
+<div class="last-ads-wrapper">
+    <h3 class="text-center">Ostatnio dodane:</h3>
+
+    <?php
+        $ads_items = new WP_Query(array(
+            "post_type" => "advertisement",
+            "posts_per_page" => 3,
+        ));     
+    ?>
+
+    <div class="container mt-5 ">
+            <div class="row">
+                <?php if ($ads_items->have_posts()) : while ($ads_items->have_posts()) : $ads_items->the_post() ?>
+                    <div class="col-lg-4 col-md-6 mb-5">
+                        <a href="<?php the_permalink(); ?>">
+                        <figure class="figure">
+                        <img src="<?php echo get_field('dodaj_zdjecie');?>" class="figure-img img-thumbnail img-fluid rounded" alt="<?php the_title(); ?>" style="height: 300px; width: 500px;">
+                            <figcaption class="figure-caption"><?php the_title(); ?></figcaption>
+                        </figure></a>
+                    </div>
+                <?php endwhile; ?>
+                    <div class="pt-5 text-center"><p><?php posts_nav_link(); ?></p></div>
+                <?php else : ?>    
+                    <p class="text-muted text-center my-5">Brak wyników</p>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- cards  -->
     <div id="cards">
         <div class="container py-5">
             <div class="row">
@@ -111,40 +152,6 @@
             </div>
         </div>
     </div>
-
-
-<!-- last ads  -->
-
-
-
-<div class="last-ads-wrapper border border-danger mb-3">
-    <h3 class="text-center">Ostatnio dodane:</h3>
-
-    <?php
-        $ads_items = new WP_Query(array(
-            "post_type" => "advertisement",
-            "posts_per_page" => 3,
-        ));     
-    ?>
-
-    <div class="container mt-5 ">
-            <div class="row">
-                <?php if ($ads_items->have_posts()) : while ($ads_items->have_posts()) : $ads_items->the_post() ?>
-                    <div class="col-lg-4 col-md-6 mb-5">
-                        <figure class="figure">
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="figure-img img-thumbnail img-fluid rounded" alt="<?php the_title(); ?>">
-                            <figcaption class="figure-caption"><?php the_title(); ?></figcaption>
-                        </figure>
-                    </div>
-                <?php endwhile; ?>
-                    <div class="pt-5 text-center"><p><?php posts_nav_link(); ?></p></div>
-                <?php else : ?>    
-                    <p class="text-muted text-center my-5">Brak wyników</p>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-
 
 </main>
 
