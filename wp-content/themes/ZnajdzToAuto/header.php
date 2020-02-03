@@ -22,14 +22,14 @@
                         wp_nav_menu([
                             'theme_location' => 'main-menu',
                             'container' => 'ul',
-                            'menu_class' => 'list-inline mb-0 btn btn-primary'
+                            'menu_class' => 'list-inline mb-0 btn btn-outline-light'
                         ]); 
                     ?>
                     <?php 
                         wp_nav_menu([
                             'theme_location' => 'header-menu',
                             'container' => 'ul',
-                            'menu_class' => 'list-inline mb-0 btn btn-warning ml-3'
+                            'menu_class' => 'list-inline mb-0 btn btn btn-primary btn-lg ml-3'
                         ]); 
                     ?>
                 </div>

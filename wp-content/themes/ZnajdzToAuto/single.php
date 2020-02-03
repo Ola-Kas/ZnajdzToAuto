@@ -3,7 +3,7 @@
     get_header(); 
 ?>
 
-    <main>
+<main>
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-12">
@@ -54,7 +54,7 @@
             <?php echo do_shortcode('[contact-form-7 id="116" title="Formularz do ogłoszenia"]'); ?>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Zamknij</button>
       </div>
     </div>
   </div>
@@ -64,23 +64,17 @@
 
 
 
+<!-- back to main page button -->
+
+  <div class="button-container d-flex justify-content-center mt-5 mb-3">
+      <a href="<?php echo get_home_url(); ?>">
+          <button type="button" class="btn btn-outline-primary btn-lg">
+          Powrót na stronę główną</button>
+      </a>    
+  </div>
 
 
 
-
-
-
-
-<!-- main page button -->
-       <div class="button-container d-flex justify-content-center mt-5 mb-3">
-            <a href="<?php echo get_home_url(); ?>">
-                <button type="button" class="btn btn-warning btn-lg btn-block" style="width: 600px;">
-                    Powrót na stronę główną</button>
-            </a>    
-        </div>
-
-
-
-    </main>
+</main>
 
 <?php get_footer(); ?>

@@ -8,6 +8,9 @@
 
     // Add styles
     function theme_styles() {
+        wp_enqueue_style( 'animate', STYLES . '/animate.css' );
+        wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Roboto&display=swap');
+        wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css' );
         wp_enqueue_style( 'bx-slider', STYLES . '/bx-slider.css' );
         wp_enqueue_style( 'styles', ROOT . '/style.css' );
     }
@@ -23,6 +26,9 @@
     }
 
     add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+
+//Add fonts
+
 
 
 

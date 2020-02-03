@@ -4,7 +4,6 @@
 
     $slider = [];
 
-
     if (get_field("slide_1")) $slider[] = get_field("slide_1");
     if (get_field("slide_2")) $slider[] = get_field("slide_2");
     if (get_field("slide_3")) $slider[] = get_field("slide_3");
@@ -16,64 +15,107 @@
 ?>
 
 <main>
-<!-- search  -->
+<!-- search form -->
 
-<div class="search-form-container d-flex justify-content-center pt-5">
-    <div class="text-center rounded bg-warning text-dark" style="width:600px; height:200px">
+
+<div class="search-form-container d-flex justify-content-center">
+ 
             <form action="<?php echo get_home_url(); ?>">
-                <div class="mt-2">Szukaj w ogłoszeniach:</div>
-                    <input type="text" name="s" id="s" placeholder="wpisz nazwę..." class="mt-2">
-                <button class="btn btn-primary" type="submit">Szukaj</button>
-                <br>
-                <span>lub</span>
-                <br>
-                <a href="<?php the_field('ads_button'); ?>" class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary btn-lg btn-block" style="width: 200px;">
-                    Przeglądaj ogłoszenia</button>
-                </a>
-                
+                <div class="form-group">
+                <h2 class="text-white font-weight-bold mb-3">Szukaj w ogłoszeniach:</h2>
+        
+        <div class="input-group input-group-lg mb-3" style="width: 400px">
 
-            </form>          
-    </div>
+            <input class="form-control form-control-lg" type="text" name="s" id="s" placeholder="wpisz czego szukasz..." class="form-control" aria-label="input" aria-describedby="button-addon2 inputGroup-sizing-lg">
+        
+
+            <div class="input-group-append">
+                <button class="btn btn-primary btn-outline-white" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+            </div>
+
+        </div>
+
+
+    <a href="<?php the_field('ads_button'); ?>" class="d-flex justify-content-center">
+        <button type="button" class="btn btn-primary btn-lg btn-block" style="width: 300px;">
+        ...lub przeglądaj ogłoszenia</button>
+    </a>
+                </div>
+
+
+            
+
+    </form>
+    
+    
 </div>
+
 
 
  
 <!-- slider  -->
 
 <div class="slider-wrapper position-relative">
-<?php if (count($slider) > 0) : ?>
-        <div id="slider" class="text-center">
-            <?php foreach ($slider as $slide) : ?>
-                <div style="background-image: url('<?php echo $slide; ?>'); height: 600px; background-repeat: no-repeat;
-                    background-position: center; background-size: cover;">    
-                    <img src="" alt="" title="tak ma być">   
+
+            <?php if ($slider == get_field("slide_1")); ?> 
+                <div id="slider" class="text-center">
+                <div style="background-image: url('<?php echo get_field("slide_1")['picture_1']; ?>'); height: 600px; background-repeat: no-repeat;
+                background-position: center; background-size: cover;">    
+                <img src="" alt="" title="<?php echo get_field("slide_1")['content_1'] ?>"> 
+                </div>
+             
+            
+            
+            <?php if ($slider == get_field("slide_2")); ?> 
+                <div style="background-image: url('<?php echo get_field("slide_2")['picture_2']; ?>'); height: 600px; background-repeat: no-repeat;
+                background-position: center; background-size: cover;">    
+                <img src="" alt="" title="<?php echo get_field("slide_2")['content_2'] ?>">  
                 </div> 
-                  
-            <?php endforeach; ?>
-        </div>
-    <?php endif; ?>
+            
+            
+
+            <?php if ($slider == get_field("slide_3")); ?> 
+                <div style="background-image: url('<?php echo get_field("slide_3")['picture_3']; ?>'); height: 600px; background-repeat: no-repeat;
+                background-position: center; background-size: cover;">    
+                <img src="" alt="" title="<?php echo get_field("slide_3")['content_3'] ?>">
+                </div>  
+         
+
 </div>
 
 
 
 
 <!-- add button  -->
-<div class="button-container d-flex justify-content-center mb-5">
-    
-        <a href="<?php the_field('add_button'); ?>">
-            <button type="button" class="btn btn-primary btn-lg btn-block" style="width: 600px;">
+
+<div class="container">
+    <div class="row">
+        <div class="col-12  mb-5">
+            <a href="<?php the_field('add_button'); ?>">
+                <button type="button" class="btn btn-primary btn-lg btn-block">
                 Dodaj nowe ogłoszenie</button>
-        </a>
-     
-</div>   
+            </a>
+        </div>
+    </div>
+</div>
+   
 
 
 
 <!-- last ads  -->
 
 <div class="last-ads-wrapper">
-    <h3 class="text-center">Ostatnio dodane:</h3>
+
+    <div class="last-ads-menu container d-flex justify-content-between w-lg-50 mt-3">
+        
+            
+                <h3>Ostatnio dodane:</h3>
+                <a href="<?php the_field('ads_button'); ?>" class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-outline-primary btn-sm">
+                    Pokaż wszystkie <i class="fas fa-caret-right"></i></button>
+                </a>
+           
+    </div>
 
     <?php
         $ads_items = new WP_Query(array(
@@ -85,7 +127,7 @@
     <div class="container mt-5 ">
             <div class="row">
                 <?php if ($ads_items->have_posts()) : while ($ads_items->have_posts()) : $ads_items->the_post() ?>
-                    <div class="col-lg-4 col-md-6 mb-5">
+                    <div class="col-lg-4 col-md-6 mb-5 animated">
                         <a href="<?php the_permalink(); ?>">
                         <figure class="figure">
                         <img src="<?php echo get_field('dodaj_zdjecie');?>" class="figure-img img-thumbnail img-fluid rounded" alt="<?php the_title(); ?>" style="height: 300px; width: 500px;">
@@ -104,18 +146,22 @@
 
 
     <!-- cards  -->
+    <div class="d-flex justify-content-center">
+        <h2>ZnajdźToAuto:</h2>
+    </div>
+    
     <div id="cards">
         <div class="container py-5">
             <div class="row">
                 <?php if ($card_1['title']) : ?>
                     <div class="col-lg-4 mb-3 mb-lg-0">
-                        <div class="card">
+                        <div class="card border border-primary">
                             <div class="card-header">
                                 <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_1['title']; ?></h2>
                             </div>
                             <div class="card-body text-center">                                
                                 <p><?php echo $card_1['content']; ?></p>
-                                <a href="<?php echo $card_1['url']; ?>" class="btn btn-block btn-warning">Czytaj więcej</a>
+                                <a href="<?php echo $card_1['url']; ?>" class="btn btn-block btn-primary">Czytaj więcej</a>
                             </div>
                         </div>
                     </div>
@@ -123,13 +169,13 @@
 
                 <?php if ($card_2['title']) : ?>
                     <div class="col-lg-4 mb-3 mb-lg-0">
-                        <div class="card">
+                        <div class="card border border-primary">
                             <div class="card-header">
                                 <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_2['title']; ?></h2>
                             </div>
                             <div class="card-body text-center">                                
                                 <p><?php echo $card_2['content']; ?></p>
-                                <a href="<?php echo $card_2['url']; ?>" class="btn btn-block btn-warning">Czytaj więcej</a>
+                                <a href="<?php echo $card_2['url']; ?>" class="btn btn-block btn-primary">Czytaj więcej</a>
                             </div>
                         </div>
                     </div>
@@ -137,13 +183,13 @@
 
                 <?php if ($card_3['title']) : ?>
                     <div class="col-lg-4 mb-3 mb-lg-0">
-                        <div class="card">
+                        <div class="card border border-primary">
                             <div class="card-header">
                                 <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_3['title']; ?></h2>
                             </div>
                             <div class="card-body text-center">                                
                                 <p><?php echo $card_3['content']; ?></p>
-                                <a href="<?php echo $card_3['url']; ?>" class="btn btn-block btn-warning">Czytaj więcej</a>
+                                <a href="<?php echo $card_3['url']; ?>" class="btn btn-block btn-primary">Czytaj więcej</a>
                             </div>
                         </div>
                     </div>

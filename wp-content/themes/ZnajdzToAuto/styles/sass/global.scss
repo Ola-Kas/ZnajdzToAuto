@@ -4,9 +4,11 @@
 // Bootstrap
 @import "./bootstrap/bootstrap";
 
+
 //Partials
 @import "footer";
 @import "header";
+@import "search-form";
 
 // Custom styles
 a {
@@ -18,24 +20,29 @@ a {
     }
 }
 
+.btn {
+    &:hover {
+        text-decoration: none;
+        color: $warning;
+    }
+}
+
 body {
     background-color: $light;
+    font-family: 'Roboto', sans-serif;
 }
 
 .myaccount-wrapper {
     height: 200px;  
 }
 
-.search-form-container {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    z-index: 1;
+.animated {
+
+    &:hover{
+        animation-name: pulse;
+    }
 }
-// .slider-wrapper {
-//     z-index: -1;
-// }
+
 
 
 

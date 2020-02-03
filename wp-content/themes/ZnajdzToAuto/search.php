@@ -1,18 +1,11 @@
-<?php 
-    get_header();  
-    
-?>
+<?php get_header(); ?>
 
-    <main>
-   
-    
+
+<main>
     
     <!-- search result  -->
-        <h3 class="text-center">Wyniki wyszukiwania dla:</h3>
-        <div class="text-center"><?php echo get_search_query(); ?></div>
-
-
-
+        
+        <!-- <div class="text-center"><?php echo get_search_query(); ?></div> -->
 
         <div class="container mb-5">
             <?php if (have_posts()) : while (have_posts()) : the_post() ?>
@@ -41,17 +34,17 @@
 
 
         
-        <!-- main page button -->
-        <div class="button-container d-flex justify-content-center mb-3">
-            <a href="<?php echo get_home_url(); ?>">
-                <button type="button" class="btn btn-warning btn-lg btn-block" style="width: 600px;">
-                    Powrót na stronę główną</button>
-            </a>    
-        </div>
+<!-- back to main page button -->
+
+    <div class="button-container d-flex justify-content-center mt-5 mb-3">
+        <a href="<?php echo get_home_url(); ?>">
+            <button type="button" class="btn btn-outline-primary btn-lg">
+            Powrót na stronę główną</button>
+        </a>    
+    </div>
 
 
-
-    </main>
+</main>
 
 
 <?php get_footer(); ?>
