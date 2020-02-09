@@ -9,6 +9,7 @@
 @import "footer";
 @import "header";
 @import "search-form";
+@import "slider";
 
 // Custom styles
 a {
@@ -32,17 +33,11 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.myaccount-wrapper {
-    height: 200px;  
-}
-
 .animated {
 
     &:hover{
         animation-name: pulse;
     }
 }
-
-
 
 

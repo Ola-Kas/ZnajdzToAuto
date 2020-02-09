@@ -11,11 +11,15 @@
 <!-- header menu  -->
 
 <body <?php body_class(); ?>>
-    <header>
+
+    <header class="sticky-top">
+    
         <div class="container">
             <div class="row justify-content-between py-4">
                 <div class="col-md-3 text-center text-md-left mb-4 mb-md-0">
-                    <a href="<?php echo get_home_url(); ?>" class="h1 font-weight-light"><?php bloginfo('name'); ?></a>
+                    <a href="<?php echo get_home_url(); ?>" class="h1 font-weight-light">
+                    <?php bloginfo('name'); ?> 
+                    </a>
                 </div>
                 <div class="col-md-9 d-flex justify-content-center justify-content-md-end align-items-center">
                     <?php 

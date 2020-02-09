@@ -4,9 +4,9 @@
 
 <!-- sociale  -->
     <div id="socialSites" class="d-flex flex-column align-items-center">
-        <h4>Znajdź nas na:</h4>
-        <a href="https://www.facebook.com/">Facebook</a>
-        <a href="https://www.instagram.com/?hl=pl">Instagram</a>
+        <h4>Odwiedź nas:</h4>
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i> Facebook</a>
+        <a href="https://www.instagram.com/?hl=pl"><i class="fab fa-instagram"></i> Instagram</a>
     </div>
 
 
@@ -31,7 +31,7 @@
 
 
 
-<div class="text-center text-dark py-4">&copy;
+<div class="text-center text-dark py-2">&copy;
 <a href="<?php echo get_home_url(); ?>"><?php bloginfo('name'); ?> <?php echo date("Y"); ?></a> 
 </div>
         
