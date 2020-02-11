@@ -81,17 +81,25 @@
 
 <!-- new add button  -->
 
-<div class="container">
-    <div class="row">
-        <div class="col-12 mb-5">
-            <a href="<?php the_field('add_button'); ?>">
-                <button type="button" class="btn btn-primary btn-lg btn-block">
-                Dodaj nowe ogłoszenie</button>
-            </a>
+
+<div class="jumbotron text-center">
+  <h1 class="display-4"><?php echo get_field('sale')['sale_header'];?></h1>
+    <p class="lead"><?php echo get_field('sale')['sale_content'];?></p>
+    
+    <hr class="my-4">
+    
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-12 col-md-4 mb-5">
+                <a href="<?php echo get_field('sale')['sale_button'];?> ">
+                    <button type="button" class="btn btn-primary shadow btn-lg"> 
+                    Dodaj nowe ogłoszenie</button>
+                </a>
+            </div>
         </div>
     </div>
-</div>
-   
+</div> <!-- jumbotron end -->
+
 
 
 
@@ -119,7 +127,7 @@
     <div class="container mt-5">
         <div class="row">
             <?php if ($ads_items->have_posts()) : while ($ads_items->have_posts()) : $ads_items->the_post() ?>
-                <div class="col-lg-4 mb-5 animated">
+                <div class="col-md-4 mb-5 animated animated-ads shadow-lg">
                     <a href="<?php the_permalink(); ?>">
                         <figure class="figure">
                             <img src="<?php echo get_field('dodaj_zdjecie');?>" class="figure-img img-thumbnail rounded" alt="<?php the_title(); ?>" style="height: 300px; width: 500px;">
@@ -146,13 +154,13 @@
     </div>
     
     <div id="cards">
-        <div class="container py-5">
-            <div class="row">
+        <div class="container">
+            <div class="row py-5">
                 <?php if ($card_1['title']) : ?>
-                    <div class="col-lg-4 mb-3 mb-lg-0">
+                    <div class="col-lg-4 mb-3 mb-lg-0 pr-md-1 shadow px-0">
                         <div class="card border border-primary">
                             <div class="card-header">
-                                <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_1['title']; ?></h2>
+                                <h2 class="text-center text-dark font-weight-normal mb-0"><i class="fas fa-users"></i> <?php echo $card_1['title']; ?></h2>
                             </div>
                             <div class="card-body text-center">                                
                                 <p><?php echo $card_1['content']; ?></p>
@@ -163,10 +171,10 @@
                 <?php endif; ?>
 
                 <?php if ($card_2['title']) : ?>
-                    <div class="col-lg-4 mb-3 mb-lg-0">
+                    <div class="col-lg-4 mb-3 mb-lg-0 px-md-1 shadow px-0">
                         <div class="card border border-primary">
                             <div class="card-header">
-                                <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_2['title']; ?></h2>
+                                <h2 class="text-center text-dark font-weight-normal mb-0"><i class="far fa-envelope-open"></i> <?php echo $card_2['title']; ?></h2>
                             </div>
                             <div class="card-body text-center">                                
                                 <p><?php echo $card_2['content']; ?></p>
@@ -177,10 +185,10 @@
                 <?php endif; ?>
 
                 <?php if ($card_3['title']) : ?>
-                    <div class="col-lg-4 mb-3 mb-lg-0">
+                    <div class="col-lg-4 mb-3 mb-lg-0 pl-md-1 shadow px-0">
                         <div class="card border border-primary">
                             <div class="card-header">
-                                <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_3['title']; ?></h2>
+                                <h2 class="text-center text-dark font-weight-normal mb-0"><i class="far fa-sticky-note"></i> <?php echo $card_3['title']; ?></h2>
                             </div>
                             <div class="card-body text-center">                                
                                 <p><?php echo $card_3['content']; ?></p>

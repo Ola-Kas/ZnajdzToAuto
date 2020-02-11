@@ -33,11 +33,29 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.animated {
+
+
+//animations
+
+.animated-ads {
 
     &:hover{
         animation-name: pulse;
     }
 }
+
+// .animated-add-button {
+//     animation-name: fadeInUpBig;
+// }
+
+//style od Dominika
+#terms {
+    &:hover {
+        font-weight: none;
+        color:$warning;
+        font-size: 16px;
+        font-family: sans-serif;
+        cursor: pointer;
+    }}
 
 

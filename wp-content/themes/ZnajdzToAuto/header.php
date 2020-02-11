@@ -13,27 +13,27 @@
 <body <?php body_class(); ?>>
 
     <header class="sticky-top">
-    
+
         <div class="container">
             <div class="row justify-content-between py-4">
                 <div class="col-md-3 text-center text-md-left mb-4 mb-md-0">
                     <a href="<?php echo get_home_url(); ?>" class="h1 font-weight-light">
-                    <?php bloginfo('name'); ?> 
+                    <?php bloginfo('name'); ?>
                     </a>
                 </div>
-                <div class="col-md-9 d-flex justify-content-center justify-content-md-end align-items-center">
+                <div class="col-md-9 d-flex justify-content-center justify-content-md-end align-items-center main-nav">
                     <?php 
                         wp_nav_menu([
                             'theme_location' => 'main-menu',
                             'container' => 'ul',
-                            'menu_class' => 'list-inline mb-0 btn btn-outline-light'
+                            'menu_class' => 'list-inline mb-0 btn btn-outline-light shadow-sm'
                         ]); 
                     ?>
                     <?php 
                         wp_nav_menu([
                             'theme_location' => 'header-menu',
                             'container' => 'ul',
-                            'menu_class' => 'list-inline mb-0 btn btn btn-primary btn-lg ml-3'
+                            'menu_class' => 'list-inline mb-0 btn btn btn-primary shadow-sm btn-lg ml-3'
                         ]); 
                     ?>
                 </div>

@@ -17,12 +17,12 @@
                         <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
 
                         <div class="text-muted py-1 my-3 border-top border-bottom">
-                            Opublikowano: <?php the_date("d.m.Y"); ?> | Autor: <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author_meta("display_name"); ?></a>
+                        Opublikowano: <?php the_date("d.m.Y"); ?> | Autor: <?php echo get_field('nazwa_sprzedajacego');?>
                         </div>
 
                         <?php the_excerpt(); ?>
 
-                        <a href="<?php the_permalink(); ?>" class="btn btn-warning">Czytaj więcej</a>
+                        <a href="<?php the_permalink(); ?>" class="btn btn-primary">Czytaj więcej</a>
                     </div>
                 </div>
             <?php endwhile; ?>

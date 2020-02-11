@@ -27,7 +27,7 @@
 
     <div class="button-container d-flex justify-content-center mt-5 mb-3">
         <a href="<?php echo get_home_url(); ?>">
-            <button type="button" class="btn btn-outline-primary btn-lg">
+            <button type="button" class="btn btn-outline-primary shadow-sm btn-lg">
             Powrót na stronę główną</button>
         </a>    
     </div>

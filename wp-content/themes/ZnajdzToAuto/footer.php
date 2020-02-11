@@ -1,39 +1,47 @@
 <footer>
+    <div class="container p-0">
+        <div class="row footer-row m-0 ml-sm-n3 mr-sm-n3 d-flex justify-content-md-around">
 
-<div class="d-flex justify-content-around pt-3">
+            <!-- <div class="col-12 col-lg-2 mb-4">
+                <img src="./images/logo.png" alt="logo" style="height: 85px;">
+            </div> -->
+            
+            <!-- sociale  -->
+            <div class="col-12 col-lg-2 mt-3 p-0 mt-1">
+                <div id="socialSites" class="d-flex flex-column justify-content-left align-items-center">
+                    <h4>Odwiedź nas:</h4>
 
-<!-- sociale  -->
-    <div id="socialSites" class="d-flex flex-column align-items-center">
-        <h4>Odwiedź nas:</h4>
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i> Facebook</a>
-        <a href="https://www.instagram.com/?hl=pl"><i class="fab fa-instagram"></i> Instagram</a>
+                    <ul class="fa-ul">
+                        <li><a href="https://www.facebook.com/"><span class="fa-li"><i class="fab fa-facebook-square"></i></span>Facebook</a></li>
+
+                        <li><a href="https://www.instagram.com/?hl=pl"><span class="fa-li"><i class="fab fa-instagram"></i></span>Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- our pages  -->
+            <div id="ourSites" class="col-12 col-lg-3 mt-3 p-0">
+                <div class=" d-flex flex-column justify-content-center align-items-center">
+                    <h4>ZnajdźToAuto:</h4>
+
+                    <?php 
+                        wp_nav_menu([
+                            'theme_location' => 'footer-menu',
+                            'container' => 'ul',
+                            'menu_class' => 'list-unstyled text-center mb-1'
+                        ]); 
+                    ?>
+                </div>
+            </div>
+
+        </div>  <!-- row end -->     
+ 
+    </div> <!-- container end  -->
+
+
+    <div class="text-center text-dark py-2">&copy;
+        <a href="<?php echo get_home_url(); ?>"><?php bloginfo('name'); ?> <?php echo date("Y"); ?></a> 
     </div>
-
-
-
-
-<!-- our pages  -->
-    <div id="ourSites" class="d-flex flex-column">
-        <h4>ZnajdźToAuto:</h4>
-        <div class="d-flex flex-column align-items-center">
-            <?php 
-                wp_nav_menu([
-                    'theme_location' => 'footer-menu',
-                    'container' => 'ul',
-                    'menu_class' => 'list-inline mb-0'
-                ]); 
-            ?>
-        </div>
-    </div>
-
-</div>       
-
-
-
-
-<div class="text-center text-dark py-2">&copy;
-<a href="<?php echo get_home_url(); ?>"><?php bloginfo('name'); ?> <?php echo date("Y"); ?></a> 
-</div>
         
 </footer>
     
