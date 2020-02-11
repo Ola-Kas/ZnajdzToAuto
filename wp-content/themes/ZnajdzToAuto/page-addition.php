@@ -39,7 +39,7 @@ get_header();
 
                     <div class="form-group row mt-3">
                     <label class="col-sm-2 control-label">
-                      <strong>Wybierz Kategorie</strong><span style='color: red'>*</span>
+                      <strong>Wybierz kategorie</strong><span style='color: red'>*</span>
                       </label>
                     <div class="col-sm-10">
                         <!-- pobranie kategorii z ogłoszeń -->
@@ -50,7 +50,7 @@ get_header();
                             ) );
                         ?>
                         
-                        <select name="kategoria">
+                        <select class="shadow rounded" name="kategoria">
                         <?php foreach($taxonomies as $taxonomie) : ?>
                             <option value="<?php echo $taxonomie->term_id; ?>"><?php echo $taxonomie->name; ?></option>
                         <?php endforeach; ?>
@@ -109,12 +109,12 @@ get_header();
                     </div>
                     <!-- <div class="form-group"> -->
                         <div class="col-sm-7 mx-auto">
-                        <input class="rounded" type="checkbox" id="warunki" value="" required> <label data-toggle="modal" data-target="#checkModal" id="terms"><strong> Czy akceptujesz warunki regulaminu ?</strong><span style='color: red'>*</span></label>
+                        <input class="rounded" type="checkbox" id="warunki" value="" required> <label  id="terms" data-toggle="modal" data-target="#checkModal"><strong> Czy akceptujesz warunki regulaminu ?</strong><span style='color: red'>*</span></label>
                     </div>
                     </div>
                     <div class="form-group">
                     <div class="col-sm-2 mx-auto">
-                    <button type="submit" id="submit_form" class="btn btn-primary mb-5 mx-right shadow rounded">Potwierdź</button>
+                    <button type="submit" id="submit_form" class="btn btn-primary mb-5 mx-right shadow rounded" data-toggle="modal" data-target="#submitModal">Potwierdź</button>
                     </div>
                     </div>
                 </form>
@@ -135,8 +135,8 @@ get_header();
       </div>
       <div class="modal-body">
                             <textarea id="termsarea" rows="5" cols="55";>
-                1. Regulamin określa zasady świadczenia przez ZnajdzToAuto Group na rzecz Użytkowników usług polegających na umożliwieniu zamieszczania ogłoszeń w Serwisie ZnajdzToAut
-                2. Warunkiem uzyskania dostępu do funkcjonalności Serwisu ZnajdzToAuto jest skorzystanie z urządzenia komunikującego się z Internetem i wyposażonego w powszechnie używaną przeglądarkę internetową.
+1. Regulamin określa zasady świadczenia przez spółkę Grupa SprawdzToAuto na rzecz Użytkowników usług polegających na umożliwieniu zamieszczania ogłoszeń w Serwisie SprawdzToAuto.
+2. Warunkiem uzyskania dostępu do funkcjonalności Serwisu SprawdzToAuto jest skorzystanie z urządzenia komunikującego się z Internetem i wyposażonego w powszechnie używaną przeglądarkę internetową.
                             </textarea>
       </div>
       <div class="modal-footer">
@@ -146,40 +146,23 @@ get_header();
   </div>
 </div>
 
-                <!-- Modal form submit-->
-                <!-- <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Zasady regulaminu</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body d-flex justify-content-center">
-                            <textarea id="conditions" name="conditions" rows="10" cols="50" >
-                1. Regulamin określa zasady świadczenia przez ZnajdzToAuto Group na rzecz Użytkowników usług polegających na umożliwieniu zamieszczania ogłoszeń w Serwisie ZnajdzToAut
-                2. Warunkiem uzyskania dostępu do funkcjonalności Serwisu ZnajdzToAuto jest skorzystanie z urządzenia komunikującego się z Internetem i wyposażonego w powszechnie używaną przeglądarkę internetową.
-                            </textarea>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Zamknij</button>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-
-<!-- back to main page button -->
-
-<div class="button-container d-flex justify-content-center mt-5 mb-3">
-        <a href="<?php echo get_home_url(); ?>">
-            <button type="button" class="btn btn-outline-primary btn-lg">
-            Powrót na stronę główną</button>
-        </a>    
+<div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><strong>Ogłoszenie wypełnione pomyślnie, prosimy czekać na publikację ;)</strong></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Zamknij</button>
+      </div>
     </div>
+  </div>
+</div>
 
-
-
+              
 
     </main>
 

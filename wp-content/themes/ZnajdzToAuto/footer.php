@@ -2,10 +2,8 @@
     <div class="container p-0">
         <div class="row footer-row m-0 ml-sm-n3 mr-sm-n3 d-flex justify-content-md-around">
 
-            <!-- <div class="col-12 col-lg-2 mb-4">
-                <img src="./images/logo.png" alt="logo" style="height: 85px;">
-            </div> -->
-            
+ 
+
             <!-- sociale  -->
             <div class="col-12 col-lg-2 mt-3 p-0 mt-1">
                 <div id="socialSites" class="d-flex flex-column justify-content-left align-items-center">
@@ -18,6 +16,9 @@
                     </ul>
                 </div>
             </div>
+
+
+            
 
             <!-- our pages  -->
             <div id="ourSites" class="col-12 col-lg-3 mt-3 p-0">

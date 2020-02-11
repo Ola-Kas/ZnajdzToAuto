@@ -15,13 +15,14 @@
     <header class="sticky-top">
 
         <div class="container">
-            <div class="row justify-content-between py-4">
-                <div class="col-md-3 text-center text-md-left mb-4 mb-md-0">
+            <div class="row justify-content-between">
+                <div class="col-md-3 text-center text-md-left mb-4 mb-md-0" id="logo-container">
                     <a href="<?php echo get_home_url(); ?>" class="h1 font-weight-light">
-                    <?php bloginfo('name'); ?>
+                    
+                    <img src='<?php echo IMAGES . '/Logo.png'; ?>' alt='header_logo' />
                     </a>
                 </div>
-                <div class="col-md-9 d-flex justify-content-center justify-content-md-end align-items-center main-nav">
+                <div id="main-nav" class="col-md-9 d-flex justify-content-center justify-content-md-end align-items-center main-nav">
                     <?php 
                         wp_nav_menu([
                             'theme_location' => 'main-menu',

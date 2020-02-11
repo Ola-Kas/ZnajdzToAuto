@@ -56,6 +56,93 @@ body {
         font-size: 16px;
         font-family: sans-serif;
         cursor: pointer;
-    }}
+    }
+}
 
 
+
+#button_kombi {
+    position: relative;
+    padding-left: 48px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: url('../../images/combi.png') no-repeat center center / cover;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 8px;
+        
+    }
+
+}
+
+#button_sedan {
+    position: relative;
+    padding-left: 48px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: url('../../images/sedan.png') no-repeat center center / cover;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 8px;
+        
+    }
+
+}
+#button_suv {
+    position: relative;
+    padding-left: 48px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: url('../../images/suv.png') no-repeat center center / cover;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 8px;
+        
+    }
+
+}
+
+#button_all {
+    position: relative;
+    padding-left: 48px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        padding: 1rem 0;
+        background: url('../../images/wheel.png') no-repeat center center / cover;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 16px;
+    }
+
+}
+
+//style dla ikonek w cards
+.cards_icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 16px;
+}
+#about_icon {
+    margin-bottom: 8px;
+}
+
+
+.container-fluid {
+    background-image: url('../../screenshot.png') no-repeat center center / cover;
+}

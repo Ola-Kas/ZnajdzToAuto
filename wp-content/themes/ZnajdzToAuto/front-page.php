@@ -160,7 +160,7 @@
                     <div class="col-lg-4 mb-3 mb-lg-0 pr-md-1 shadow px-0">
                         <div class="card border border-primary">
                             <div class="card-header">
-                                <h2 class="text-center text-dark font-weight-normal mb-0"><i class="fas fa-users"></i> <?php echo $card_1['title']; ?></h2>
+                                <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_1['title']; ?><img src='<?php echo IMAGES . '/002-accreditation.png'; ?>' alt='about_icon' class="cards_icon" id="about_icon" /></h2>
                             </div>
                             <div class="card-body text-center">                                
                                 <p><?php echo $card_1['content']; ?></p>
@@ -174,7 +174,7 @@
                     <div class="col-lg-4 mb-3 mb-lg-0 px-md-1 shadow px-0">
                         <div class="card border border-primary">
                             <div class="card-header">
-                                <h2 class="text-center text-dark font-weight-normal mb-0"><i class="far fa-envelope-open"></i> <?php echo $card_2['title']; ?></h2>
+                                <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_2['title']; ?><img src='<?php echo IMAGES . '/001-contact.png'; ?>' alt='contact_icon' class="cards_icon" /></h2>
                             </div>
                             <div class="card-body text-center">                                
                                 <p><?php echo $card_2['content']; ?></p>
@@ -188,7 +188,7 @@
                     <div class="col-lg-4 mb-3 mb-lg-0 pl-md-1 shadow px-0">
                         <div class="card border border-primary">
                             <div class="card-header">
-                                <h2 class="text-center text-dark font-weight-normal mb-0"><i class="far fa-sticky-note"></i> <?php echo $card_3['title']; ?></h2>
+                                <h2 class="text-center text-dark font-weight-normal mb-0"><?php echo $card_3['title']; ?><img src='<?php echo IMAGES . '/003-ads.png'; ?>' alt='ads_icon' class="cards_icon" /></h2>
                             </div>
                             <div class="card-body text-center">                                
                                 <p><?php echo $card_3['content']; ?></p>

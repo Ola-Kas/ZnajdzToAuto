@@ -45,14 +45,14 @@
     <div class="row justify-content-center">
         <h4>Wybierz typ samochodu:</h4>
     </div>
-    <div class="row justify-content-center">
-        <button type="button" class="btn btn-outline-primary mr-1" id="category_all-button">Wszystkie</button>
+    <div  id="category_buttons" class="row justify-content-center">
+        <button  id="button_all"  type="button" class="btn btn-outline-primary mr-1 btn-lg" id="category_all-button">Wszystkie</button>
 
-        <button type="button" class="btn btn-outline-primary mr-1" id="kombi-button">Kombi</button>
+        <button  id="button_kombi"  type="button" class="btn btn-outline-primary mr-1 btn-lg" id="kombi-button">Kombi</button>
 
-        <button type="button" class="btn btn-outline-primary mr-1" id="sedan-button">Sedan</button>
+        <button  id="button_sedan"  type="button" class="btn btn-outline-primary mr-1 btn-lg" id="sedan-button">Sedan</button>
 
-        <button type="button" class="btn btn-outline-primary" id="suv-button">SUV</button>
+        <button  id="button_suv" type="button" class="btn btn-outline-primary btn-lg" id="suv-button">SUV</button>
     </div>
 
     <div id='all_category' class="row justify-content-center">

@@ -1,6 +1,8 @@
 header {
-    background-color: $grey;
-} 
+    background-color: rgba(167, 162, 169, 0.7);
+    height: 100px;
+}
+ 
 
 
 header ul li {
@@ -14,6 +16,14 @@ header ul li {
     &:not(:first-child) {
         margin-left: 1.5rem;
     }
-
-
 }
+
+@media only screen and (max-width: 760px) {
+    div.main-nav {
+    visibility: hidden;
+    //display: none;
+    }
+  }
+
+
+
